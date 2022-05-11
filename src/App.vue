@@ -1,11 +1,9 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <router-view />
 </template>
-
+<script>
+export default {};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -25,6 +23,10 @@ nav a {
 }
 
 nav a.router-link-exact-active {
+  display: inline-block;
   color: #42b983;
+  transition: all 0.3s;
+  font-size: 1.3rem;
+  transform: translateY(-5px);
 }
 </style>

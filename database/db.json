@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "title": "header 1",
+      "body": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nulla facere soluta cupiditate. Dignissimos provident ipsum eaque laudantium adipisci ab repellat debitis, doloribus asperiores accusamus perferendis autem officia, sapiente error, illo itaque magnam consequuntur veniam quasi tenetur ea quis distinctio!",
+      "id": 1,
+      "visible": true
+    },
+    {
+      "title": "header 2",
+      "body": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nulla facere soluta cupiditate. Dignissimos provident ipsum eaque laudantium adipisci ab repellat debitis, doloribus asperiores accusamus perferendis autem officia, sapiente error, illo itaque magnam consequuntur veniam quasi tenetur ea quis distinctio!",
+      "id": 2,
+      "visible": true
+    },
+    {
+      "title": "header 3",
+      "body": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nulla facere soluta cupiditate. Dignissimos provident ipsum eaque laudantium adipisci ab repellat debitis, doloribus asperiores accusamus perferendis autem officia, sapiente error, illo itaque magnam consequuntur veniam quasi tenetur ea quis distinctio!",
+      "id": 3,
+      "visible": true
+    },
+    {
+      "title": "header 4",
+      "body": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nulla facere soluta cupiditate. Dignissimos provident ipsum eaque laudantium adipisci ab repellat debitis, doloribus asperiores accusamus perferendis autem officia, sapiente error, illo itaque magnam consequuntur veniam quasi tenetur ea quis distinctio!",
+      "id": 4,
+      "visible": true
+    }
+  ]
+}

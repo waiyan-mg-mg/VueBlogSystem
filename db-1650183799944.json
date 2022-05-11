@@ -1,0 +1,29 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "position": "Manager",
+      "Salary": "$3999"
+    },
+    {
+      "id": 2,
+      "position": "Developer",
+      "Salary": "$900"
+    },
+    {
+      "id": 3,
+      "position": "Designer",
+      "Salary": "$500"
+    },
+    {
+      "id": 4,
+      "position": "Officer",
+      "Salary": "$400"
+    },
+    {
+      "id": 5,
+      "position": "Cleaner",
+      "Salary": "$200"
+    }
+  ]
+}
