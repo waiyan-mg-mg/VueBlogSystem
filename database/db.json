@@ -1,28 +1,39 @@
 {
   "posts": [
     {
-      "title": "header 1",
-      "body": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nulla facere soluta cupiditate. Dignissimos provident ipsum eaque laudantium adipisci ab repellat debitis, doloribus asperiores accusamus perferendis autem officia, sapiente error, illo itaque magnam consequuntur veniam quasi tenetur ea quis distinctio!",
-      "id": 1,
-      "visible": true
+      "title": "titel one",
+      "body": "title body",
+      "tags": ["html"],
+      "visible": true,
+      "id": 1
     },
     {
-      "title": "header 2",
-      "body": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nulla facere soluta cupiditate. Dignissimos provident ipsum eaque laudantium adipisci ab repellat debitis, doloribus asperiores accusamus perferendis autem officia, sapiente error, illo itaque magnam consequuntur veniam quasi tenetur ea quis distinctio!",
-      "id": 2,
-      "visible": true
+      "title": "sdfdd",
+      "body": "sdfkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk;e",
+      "tags": ["gsa"],
+      "visible": true,
+      "id": 2
     },
     {
-      "title": "header 3",
-      "body": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nulla facere soluta cupiditate. Dignissimos provident ipsum eaque laudantium adipisci ab repellat debitis, doloribus asperiores accusamus perferendis autem officia, sapiente error, illo itaque magnam consequuntur veniam quasi tenetur ea quis distinctio!",
-      "id": 3,
-      "visible": true
+      "title": "Title One",
+      "body": "lorem ispum don poest joust sklee toyncy\ndsfpu yh s ;sad",
+      "tags": ["crazy", "funny", "comedy"],
+      "visible": true,
+      "id": 3
     },
     {
-      "title": "header 4",
-      "body": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nulla facere soluta cupiditate. Dignissimos provident ipsum eaque laudantium adipisci ab repellat debitis, doloribus asperiores accusamus perferendis autem officia, sapiente error, illo itaque magnam consequuntur veniam quasi tenetur ea quis distinctio!",
-      "id": 4,
-      "visible": true
+      "title": "new title",
+      "body": "new body lorem",
+      "tags": ["new testing", "project", "html", "css", "js", "three js"],
+      "visible": true,
+      "id": 4
+    },
+    {
+      "title": "new title",
+      "body": "new body lorem",
+      "tags": ["new testing", "project", "html", "css", "js", "three js"],
+      "visible": true,
+      "id": 5
     }
   ]
 }

@@ -2,18 +2,23 @@
   <form @submit.prevent>
     <div class="title">
       <label for="title">Create Title</label>
-      <input type="text" id="title" v-model="title" />
+      <input type="text" id="title" v-model="title" required />
     </div>
     <div class="body">
       <label for="body">Create Body</label>
-      <textarea id="body" v-model="body"></textarea>
+      <textarea id="body" v-model="body" required></textarea>
     </div>
     <div class="tag">
       <label for="tag">Tags <span>hit "Enter" to add new tag</span></label>
-      <input type="text" id="tag" v-model="tag" @keydown.enter="hitTag" />
+      <input
+        type="text"
+        id="tag"
+        v-model="tag"
+        @keydown.enter.prevent="hitTag"
+      />
     </div>
     <div>
-      <button class="create_btn">Create Post</button>
+      <button class="create_btn" @click="submitPost">Create Post</button>
     </div>
     <div v-if="tags.length">
       <div class="tags">
@@ -29,12 +34,15 @@
 
 <script>
 import { ref } from "@vue/reactivity";
+import { useRouter } from "vue-router";
+
 export default {
   setup() {
     let title = ref("");
     let body = ref("");
     let tag = ref("");
     let tags = ref([]);
+    let router = useRouter();
     let hitTag = () => {
       if (!tags.value.includes(tag.value)) tags.value.push(tag.value);
       tag.value = "";
@@ -42,7 +50,22 @@ export default {
     let deleteTag = (singleTag) => {
       tags.value = tags.value.filter((tag) => tag !== singleTag);
     };
-    return { title, body, tag, tags, hitTag, deleteTag };
+    let submitPost = async () => {
+      if ((title.value, body.value, tags.value.length)) {
+        await fetch("http://localhost:3000/posts", {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({
+            title: title.value,
+            body: body.value,
+            tags: tags.value,
+            visible: true,
+          }),
+        });
+        router.push("/");
+      }
+    };
+    return { title, body, tag, tags, hitTag, deleteTag, submitPost };
   },
 };
 </script>
@@ -51,7 +74,7 @@ export default {
 form {
   width: 400px;
   text-align: center;
-  margin: 0 auto;
+  margin: 50px auto 0;
   display: flex;
   flex-direction: column;
   padding-top: 30px;
@@ -59,6 +82,7 @@ form {
   text-align: left;
   user-select: none;
   background: rgba(255, 255, 255, 0.993);
+  box-shadow: 2px 2px 2px white, -2px -2px 2px white;
 }
 form > div {
   margin: 20px auto;
@@ -98,7 +122,7 @@ div textarea:focus {
   background-color: #8c9dff;
   border: none;
   border-radius: 10px;
-  color: whitesmoke;
+  color: white;
   cursor: pointer;
 }
 .create_btn:hover {
@@ -136,5 +160,9 @@ div.tags span {
   opacity: 0.8;
   font-size: 13px;
   cursor: pointer;
+}
+.tag label span {
+  font-size: 15px;
+  color: gray;
 }
 </style>

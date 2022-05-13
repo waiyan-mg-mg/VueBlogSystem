@@ -1,4 +1,5 @@
 <template>
+ 
   <div v-for="post in posts" :key="post.id">
     <SinglePost :post="post" />
   </div>
@@ -12,4 +13,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+
+</style>
