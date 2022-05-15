@@ -2,11 +2,11 @@
   <form @submit.prevent>
     <div class="title">
       <label for="title">Create Title</label>
-      <input type="text" id="title" v-model="title" required />
+      <input type="text" id="title" v-model="title" />
     </div>
     <div class="body">
       <label for="body">Create Body</label>
-      <textarea id="body" v-model="body" required></textarea>
+      <textarea id="body" v-model="body"></textarea>
     </div>
     <div class="tag">
       <label for="tag">Tags <span>hit "Enter" to add new tag</span></label>
@@ -19,6 +19,9 @@
     </div>
     <div>
       <button class="create_btn" @click="submitPost">Create Post</button>
+      <button class="reject_btn" @dblclick="rejectSubmit">
+        Double Click to Reject
+      </button>
     </div>
     <div v-if="tags.length">
       <div class="tags">
@@ -65,7 +68,19 @@ export default {
         router.push("/");
       }
     };
-    return { title, body, tag, tags, hitTag, deleteTag, submitPost };
+    let rejectSubmit = () => {
+      router.push("/");
+    };
+    return {
+      title,
+      body,
+      tag,
+      tags,
+      hitTag,
+      deleteTag,
+      submitPost,
+      rejectSubmit,
+    };
   },
 };
 </script>
@@ -115,7 +130,8 @@ div input:focus,
 div textarea:focus {
   border: 4px solid #8c9dff;
 }
-.create_btn {
+.create_btn,
+.reject_btn {
   padding: 10px 20px;
   font-size: 18px;
   font-weight: bold;
@@ -127,13 +143,27 @@ div textarea:focus {
 }
 .create_btn:hover {
   transition: transform 0.3s;
-  animation: shink 300ms 2;
+  animation: postEffect 300ms 2;
 }
-.create_btn:active {
+.create_btn:active,
+.reject_btn:active {
   background-color: #ffa0a0;
   transform: translateY(-3px);
 }
-@keyframes shink {
+.reject_btn {
+  background-color: crimson;
+  color: white;
+  margin-left: 15px;
+}
+.reject_btn:hover {
+  animation: rejectEffect 400ms 2;
+}
+@keyframes rejectEffect {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes postEffect {
   50% {
     transform: translateY(0);
   }

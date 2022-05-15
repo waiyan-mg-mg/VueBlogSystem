@@ -2,7 +2,7 @@
   <h3>
     <div>Post Lists</div>
     <div class="create_post">
-      <router-link :to="{ name: 'createPost' }">Create new post</router-link>
+      <router-link :to="{ name: 'createPost' }">Create post</router-link>
     </div>
   </h3>
   <div v-if="posts.length > 0" class="home">
@@ -13,13 +13,13 @@
 
 <script>
 import PostLists from "../components/PostLists";
-import getPost from "../composable/getPosts";
+import getPosts from "../composable/getPosts";
 export default {
   components: {
     PostLists,
   },
   setup() {
-    let { posts, error_msg, response } = getPost();
+    let { posts, error_msg, response } = getPosts();
     response();
     return { posts, error_msg };
   },

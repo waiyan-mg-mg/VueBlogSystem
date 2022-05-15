@@ -1,6 +1,6 @@
 <template>
   <div v-if="dataArr.body">
-    <SinglePost :post="dataArr"></SinglePost>
+    <SinglePost :post="dataArr" :editCss="editCss"></SinglePost>
   </div>
   <div v-else>
     <Spinner></Spinner>
@@ -28,7 +28,8 @@ export default {
     const back = () => {
       router.go(-1);
     };
-    return { dataArr, err, back };
+    const editCss = "max-width:600px;margin:20px auto;";
+    return { dataArr, err, back, editCss };
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="post_conatiner">
+  <div class="post_conatiner" :style="editCss">
     <h4>
       <router-link :to="{ name: 'SinglePostDetail', params: { id: post.id } }">
         {{ post.title }}</router-link
@@ -25,19 +25,25 @@
         >
       </span>
     </p>
+    <div v-if="editCss" class="backBtn">
+      <button @click="goBack">Back</button>
+    </div>
   </div>
 </template>
 
 <script>
 import { ref } from "@vue/reactivity";
 import { onMounted, onUnmounted, onUpdated } from "@vue/runtime-core";
+import { useRouter } from "vue-router";
+
 export default {
-  props: ["post"],
+  props: ["post", "editCss"],
   setup(props) {
     let singlePostVisible = ref(props.post.visible);
     let spliceText = ref(props.post.body.substring(0, 50));
     let show_seeMore_btn = ref(true);
     let toggle_seeButtons = ref(true);
+    let router = useRouter();
     const showMore = () => {
       spliceText.value = props.post.body;
       show_seeMore_btn.value = false;
@@ -52,8 +58,9 @@ export default {
         spliceText.value = props.post.body;
       }
     });
-    onUnmounted(() => console.log("un mounted (destory)"));
-    onUpdated(() => console.log("updated"));
+    const goBack = () => {
+      router.go(-1);
+    };
     return {
       spliceText,
       singlePostVisible,
@@ -61,6 +68,7 @@ export default {
       showMore,
       showLess,
       toggle_seeButtons,
+      goBack,
     };
   },
 };
@@ -101,7 +109,6 @@ h4 a:hover {
   display: block;
   border-radius: 5px;
   transform: translateY(-10px);
-
 }
 
 p {
@@ -134,5 +141,24 @@ div.tags span {
 .tag label span {
   font-size: 15px;
   color: gray;
+}
+.backBtn {
+  text-align: center;
+}
+.backBtn button {
+  padding: 10px 20px;
+  background: #35ccff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.backBtn button:hover {
+  transform: scale(1.2);
+}
+.backBtn button:active {
+  background: whitesmoke;
+  color: #35ccff;
 }
 </style>
