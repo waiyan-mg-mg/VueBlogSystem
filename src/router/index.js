@@ -3,6 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import "../assets/global.css";
 import SinglePostDetail from "../components/SinglePostDetail.vue";
 import Create_post from "../components/Create_post.vue";
+
+import TagFilter from "../components/TagFilter.vue";
 const routes = [
   {
     path: "/",
@@ -19,6 +21,12 @@ const routes = [
     path: "/create",
     name: "createPost",
     component: Create_post,
+  },
+  {
+    path: "/tags/:tag",
+    name: "filterTag",
+    component: TagFilter,
+    props: true,
   },
 ];
 

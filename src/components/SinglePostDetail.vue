@@ -24,7 +24,7 @@ export default {
     let route = useRoute();
 
     const { dataArr, err, load } = getSinglePost();
-    load(route.params.id);
+    load(route.params.id); //alternative for props.id
     const back = () => {
       router.go(-1);
     };

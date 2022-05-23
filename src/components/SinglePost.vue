@@ -11,7 +11,7 @@
     </h4>
     <div class="tags">
       <div v-for="singleTag in post.tags" :key="singleTag">
-        <div>#{{ singleTag }}</div>
+        <SingleHashTag :singleTag="singleTag"></SingleHashTag>
       </div>
     </div>
     <p v-if="singlePostVisible">
@@ -32,11 +32,13 @@
 </template>
 
 <script>
+import SingleHashTag from "./singleHashTag";
 import { ref } from "@vue/reactivity";
 import { onMounted, onUnmounted, onUpdated } from "@vue/runtime-core";
 import { useRouter } from "vue-router";
 
 export default {
+  components: { SingleHashTag },
   props: ["post", "editCss"],
   setup(props) {
     let singlePostVisible = ref(props.post.visible);
@@ -74,7 +76,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .post_conatiner {
   background-color: rgba(255, 255, 255, 0.993);
   padding: 20px;
